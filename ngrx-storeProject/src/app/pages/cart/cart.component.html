@@ -1,0 +1,16 @@
+<h1>Cart page!</h1>
+
+<h3 *ngIf="(cartItems$ | async)?.length === 0">The cart is empty!</h3>
+
+<ul>
+  <li *ngFor="let item of cartItems$ | async">
+    <p class="row-item">{{item.name + ' x ' + item.quantity}}
+    </p>
+  </li>
+</ul>
+
+<div *ngIf="(cartItems$ | async)?.length">
+  <p>Total Quantity: {{cartItemsQuantity$ | async}}</p>
+  <p>Total price: {{cartItemsPrice$ | async}}</p>
+  <button (click)="emptyCart()">Empty cart</button>
+</div>

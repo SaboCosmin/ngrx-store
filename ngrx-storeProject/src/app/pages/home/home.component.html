@@ -1,0 +1,14 @@
+<h1>Home Page</h1>
+
+<h3>Shopping list</h3>
+<ul>
+	<li *ngFor="let item of itemList">
+		<p class="row-item">{{item.name}}
+			<button (click)="addItem(item)">Add to cart</button>
+			<button (click)="removeItem(item)">X</button>
+			<button (click)="removeAll(item)">X All</button>
+		</p>
+	</li>
+</ul>
+
+<button (click)="goToCart()">Go to cart</button>
