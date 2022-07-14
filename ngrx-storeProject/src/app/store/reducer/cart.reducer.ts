@@ -27,7 +27,6 @@ export function reducer(state = initialState, action: CartActions): State {
 }
 
 function handleAddItem(state: State, action: AddItem): State {
-  console.log('handleAddItem', state, action);
   return {
     ...state,
     items: addCartItem(state.items, action.payload),
